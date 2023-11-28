@@ -29,7 +29,7 @@ class HamburgerFragment : Fragment() {
 
     companion object {
         fun BurgerInstance(): HamburgerFragment {
-           return HamburgerFragment()
+            return HamburgerFragment()
         }
     }
 
@@ -38,29 +38,31 @@ class HamburgerFragment : Fragment() {
 
         CoroutineScope(Dispatchers.Main).launch {
             val listBurger = MyApplication.appDatabase.orderDao().getAllBurgersType()
-            Log.d("burger","${listBurger}")
+            Log.d("burger", "${listBurger}")
             val adapter = AdapterBurger(listBurger.toMutableList(), requireContext())
             burgerScreenBinding.rcvHamburger.adapter = adapter
 
-            adapter.setOnItemClick(object : OnItemClick{
+            adapter.setOnItemClick(object : OnItemClick {
                 override fun onItemClick(position: Int) {
                     val selectedItem = listBurger[position]
 
-                    Toast.makeText(requireContext(),"Click on $", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Click on $", Toast.LENGTH_SHORT).show()
                     val fragmentDetail = DetailFragment()
-                    val order = Order(selectedItem.imgFood,
+                    val order = Order(
+                        selectedItem.imgFood,
                         selectedItem.nameFood,
                         selectedItem.price,
                         selectedItem.describe,
                         selectedItem.date,
-                        selectedItem.type)
+                        selectedItem.type
+                    )
                     val bundle = Bundle().apply {
-                        putParcelable("order",order)
+                        putParcelable("order", order)
                     }
                     sharedViewModel.setSharedData(order)
                     fragmentDetail.arguments = bundle
                     val transaction = requireActivity().supportFragmentManager.beginTransaction()
-                    transaction.replace(R.id.framelayout,fragmentDetail)
+                    transaction.replace(R.id.framelayout, fragmentDetail)
                     transaction.addToBackStack(null)
                     transaction.commit()
                 }
