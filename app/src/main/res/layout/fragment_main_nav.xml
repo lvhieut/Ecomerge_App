@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_admin_1"
+        tools:context=".view.fragment.MainNavFragment.MainNavFragment">
+
+        <!-- TODO: Update blank fragment layout -->
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWelcome"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:fontFamily="@font/youngserif_regular"
+            android:gravity="center"
+            android:text="@string/welcome"
+            android:textSize="40sp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="142dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogOut"
+            app:backgroundTint="@color/colorPrimaryDark2"
+            app:icon="@drawable/log_out"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnAddData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/log_out"
+            tools:layout_editor_absoluteX="147dp"
+            tools:layout_editor_absoluteY="499dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddData"
+            app:backgroundTint="@color/colorPrimaryDark2"
+            app:icon="@drawable/add_cart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/add_Data"
+            tools:layout_editor_absoluteX="74dp"
+            tools:layout_editor_absoluteY="409dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

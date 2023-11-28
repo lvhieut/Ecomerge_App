@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="pink">#F28482</color>
+    <color name="unknow">#D8491B</color>
+    <color name="yellow">#FFEB3B</color>
+    <color name="green">#4BD651</color>
+    <color name="unknow1">#D1D6D1</color>
+    <color name="view">#405B5E5B</color>
+    <color name="colorPrimaryDark">#6051AFA6</color>
+    <color name="colorPrimaryDark2">#FA3D7571</color>
+    <color name="color2">#FA000DF8</color>
+    <color name="icon_app">#FAD38ECC</color>
+    <color name="non_black">#FA302D30</color>
+    <color name="brown">#8b4513</color>
+    <color name="green_second">#b2bf48</color>
+    <color name="colorcode">#6C6C6A</color>
+
+    <color name="purple_200">#4E1313</color>
+    <color name="purple_500">#301B1B</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+
+
+</resources>

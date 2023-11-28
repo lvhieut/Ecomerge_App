@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        tools:context=".view.fragment.CategoryFoodFragment.AddFoodFragment.AddFoodFragment">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgFood"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/bg_circle_layout"
+            android:src="@drawable/pho_bo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNameFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:textSize="20sp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@id/imgFood"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/t_n_c_a_m_n_n" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toEndOf="@id/imgFood"
+            app:layout_constraintTop_toBottomOf="@id/tvNameFood"
+            android:text="@string/price1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPriceFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toEndOf="@id/tvPrice"
+            app:layout_constraintTop_toBottomOf="@id/tvNameFood"
+            tools:text="@string/_100_000" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvQuanity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toEndOf="@id/imgFood"
+            app:layout_constraintTop_toBottomOf="@id/tvPrice"
+            android:text="@string/textview_quanity" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnIncrease"
+            android:layout_width="60dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="3dp"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:background="@drawable/bg_button_orange"
+            android:padding="10dp"
+            android:src="@drawable/plus_1"
+            app:layout_constraintStart_toEndOf="@+id/tvQuanity"
+            app:layout_constraintTop_toBottomOf="@+id/tvPriceFood"
+            android:focusable="true" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAdd"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tvQuanity"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/bg_button_orange"
+            android:text="@string/them_gio_hang" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

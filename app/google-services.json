@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "266808976043",
+    "project_id": "longin-signup-myappecomerge",
+    "storage_bucket": "longin-signup-myappecomerge.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:266808976043:android:3ec625d1b6f6f74d6bcdee",
+        "android_client_info": {
+          "package_name": "com.example.my_ecomerge_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "266808976043-3sedmmvk89rspnj14srkjla33poabqve.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpRXlJykDkWwRnb7-NoNRpiIxlkJHqE24"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "266808976043-3sedmmvk89rspnj14srkjla33poabqve.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

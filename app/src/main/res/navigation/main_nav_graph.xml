@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/mainNavFragment">
+
+    <fragment
+        android:id="@+id/mainNavFragment"
+        android:name="com.example.my_ecomerge_app.view.fragment.MainNavFragment.MainNavFragment"
+        android:label="fragment_main_nav"
+        tools:layout="@layout/fragment_main_nav" />
+
+    <fragment
+        android:id="@+id/addToCartFragment"
+        android:name="com.example.my_ecomerge_app.view.fragment.PermissionAdmin.AddDataToCart.AddToCartFragment"
+        android:label="fragment_add_to_cart"
+        tools:layout="@layout/fragment_add_to_cart" />
+    <action
+        android:id="@+id/action_global_addToCartFragment"
+        app:destination="@id/addToCartFragment" />
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.my_ecomerge_app.view.activity.LoginActivity"
+        android:label="LoginActivity" />
+    <action
+        android:id="@+id/action_global_loginActivity"
+        app:destination="@+id/loginActivity"/>
+
+
+</navigation>

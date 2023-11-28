@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimen_28dp">28dp</dimen>
+    <dimen name="dimen_text_32sp">32sp</dimen>
+    <dimen name="dimen_width_20dp">20dp</dimen>
+    <dimen name="dimen_width_10dp">10dp</dimen>
+    <dimen name="dimen_padding_2dp">2dp</dimen>
+    <dimen name="dimen_width_400dp">400dp</dimen>
+    <dimen name="dimen_width_marginBottom_182dp">182dp</dimen>
+    <dimen name="dimen_textview_20sp">20sp</dimen>
+    <dimen name="dimen_textview_16sp">16sp</dimen>
+    <dimen name="dimen_textview_30sp">30sp</dimen>
+    <dimen name="dimen_textview_40sp">40sp</dimen>
+    <dimen name="dimen_margin_8dp">8dp</dimen>
+    <dimen name="dimen_textview_50sp">50sp</dimen>
+    <dimen name="dimen_translationX_40dp">40dp</dimen>
+    <dimen name="dimen_translationY_40dp">40dp</dimen>
+    <dimen name="dimen_translationY_20dp">20dp</dimen>
+    <dimen name="dimen_textview_15sp">15sp</dimen>
+    <dimen name="dimen_marginTop_10dp">10dp</dimen>
+    <dimen name="dimen_marginTop_5dp">5dp</dimen>
+    <dimen name="dimen_marginStart_2dp">2dp</dimen>
+    <dimen name="dimen_elevation_3dp">3dp</dimen>
+    <dimen name="dimen_rounded_1dp">1dp</dimen>
+    <dimen name="dimen_marginStart_6dp">6dp</dimen>
+    <dimen name="dimen_marginTop_20dp">20dp</dimen>
+    <dimen name="dimen_translationX_20dp">20dp</dimen>
+    <dimen name="dimen_textview_26sp">26sp</dimen>
+    <dimen name="dimen_textview_24sp">24sp</dimen>
+    <dimen name="dimen_margin_start_10dp">10dp</dimen>
+</resources>

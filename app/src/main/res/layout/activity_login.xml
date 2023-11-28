@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/rvLoginHome"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#6FC2E8"
+        tools:context=".view.activity.LoginActivity">
+
+        <RelativeLayout
+            android:id="@+id/rvImageLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/do_an">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="1dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="28dp">
+            </LinearLayout>
+
+        </RelativeLayout>
+        <!--điền đủ ID cả file-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="-20dp"
+            app:cardCornerRadius="@dimen/dimen_28dp">
+            <!--không hardcode dimen cả file-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/dimen_28dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/patrickhand_regular"
+                    android:text="@string/welcome"
+                    android:textColor="@color/pink"
+                    android:textSize="@dimen/dimen_text_32sp"
+                    android:textStyle="bold" />
+                <!--                text style để trong file style và gọi bằng style="" -->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.7"
+                    android:text="@string/please_login_with_your_information" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.7"
+                    android:text="@string/email_address"
+                    android:textStyle="bold" />
+                <!--không hardcode cả file-->
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/done_icon"
+                    android:inputType="textEmailAddress" />
+                <!--nên dùng với AppCompat cho tất cả element-->
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_width_20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.7"
+                    android:text="@string/passwordTv"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edtPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/password_icon"
+                    android:inputType="textPassword" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:alpha="0.7"
+                        android:text="@string/remember_me" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCreateAcc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/create_an_account" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_width_10dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="Login"
+                    app:cornerRadius="32dp" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:alpha="0.7"
+                    android:text="@string/or_login_with" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/loginWithFb"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="12dp"
+                        android:src="@drawable/facebook"
+                        android:padding="@dimen/dimen_padding_2dp"
+                        />
+
+                    <ImageView
+                        android:id="@+id/loginWithGg"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="12dp"
+                        android:src="@drawable/google_2"
+                        android:padding="@dimen/dimen_padding_2dp"
+                        />
+                    <!--                    set ảnh cho imageview không nên dùng background, dùng src-->
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+        <!--không được để nhiều dòng trống-->
+    </RelativeLayout>
+
+</layout>

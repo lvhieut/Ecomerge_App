@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="130dp"
+        android:layout_margin="6dp"
+        android:elevation="3dp"
+        android:background="@drawable/bg_item_categories">
+<!--không để height cứng trong trường hợp này-->
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgImageItem"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/pizza_1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="10dp" />
+
+        <TextView
+            android:id="@+id/tvItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            tools:text="@string/pizza"
+            android:layout_gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/imgImageItem"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="4dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

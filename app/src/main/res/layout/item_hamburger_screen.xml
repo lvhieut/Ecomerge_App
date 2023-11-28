@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:elevation="@dimen/dimen_elevation_3dp"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:focusable="true">
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/imgCategoriesFood"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        app:riv_corner_radius="10dp"
+        app:riv_border_width="@dimen/dimen_rounded_1dp"
+        app:riv_border_color="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvNameBurGer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_marginStart_6dp"
+            android:text="@string/t_n_c_a_m_n_n"
+            android:fontFamily="@font/youngserif_regular"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginTop="@dimen/dimen_marginTop_10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgCategoriesFood"
+            android:textSize="@dimen/dimen_textview_20sp"
+            />
+        <TextView
+            android:id="@+id/tvPricaBurger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/imgCategoriesFood"
+            android:layout_marginTop="@dimen/dimen_marginTop_10dp"
+            android:layout_marginStart="@dimen/dimen_marginStart_6dp"
+            android:text="@string/gi_m_n_n"
+            app:layout_constraintTop_toBottomOf="@+id/tvNameBurGer"
+            android:textSize="@dimen/dimen_textview_20sp"
+            />
+        <ImageView
+            android:id="@+id/imgDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/imgCategoriesFood"
+            android:layout_marginTop="@dimen/dimen_marginTop_20dp"
+            android:layout_marginStart="@dimen/dimen_marginStart_6dp"
+            app:layout_constraintTop_toBottomOf="@id/tvPricaBurger"
+            android:src="@drawable/baseline_access_time_filled_24" />
+        <TextView
+            android:id="@+id/tvDateBurgerNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_marginTop_20dp"
+            android:text="@string/_5"
+            android:layout_marginStart="@dimen/dimen_marginStart_2dp"
+            app:layout_constraintStart_toEndOf="@+id/imgDate"
+            android:textSize="@dimen/dimen_textview_15sp"
+            app:layout_constraintTop_toBottomOf="@id/tvPricaBurger" />
+        <TextView
+            android:id="@+id/tvDateBurger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_marginTop_20dp"
+            android:text="@string/min"
+            android:layout_marginStart="@dimen/dimen_marginStart_2dp"
+            app:layout_constraintStart_toEndOf="@+id/tvDateBurgerNum"
+            android:textSize="@dimen/dimen_textview_15sp"
+            app:layout_constraintTop_toBottomOf="@id/tvPricaBurger" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/bg_button_corner"
+        android:fontFamily="@font/youngserif_regular"
+        android:padding="10dp"
+        android:text="@string/add_to_cart"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.955" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/view"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/imgCategoriesFood"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

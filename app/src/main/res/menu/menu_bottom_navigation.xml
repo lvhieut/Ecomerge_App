@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/btnHome"
+        android:icon="@drawable/home"
+        android:title="@string/home"/>
+    <item
+        android:id="@+id/btnOrder"
+        android:icon="@drawable/clipboard"
+        android:title="@string/order"/>
+    <item
+        android:id="@+id/btnNotification"
+        android:icon="@drawable/bell"
+        android:title="@string/notify"/>
+    <item
+        android:id="@+id/btnPersonal"
+        android:icon="@drawable/user"
+        android:title="@string/me"/>
+</menu>

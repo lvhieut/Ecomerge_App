@@ -1,0 +1,135 @@
+<resources>
+    <string name="app_name">GG_SignIn</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="textview">TextView</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log-in</string>
+    <string name="do_you_have_an_account">Do you have an account?</string>
+    <string name="sign_in_with_google">Sign In With Google</string>
+    <string name="type_your_password">Type Your Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="retype_your_password">Retype Your Password</string>
+    <string name="already_registered_sign_in">Already Registered , Sign In !</string>
+    <string name="type_your_email">Type your Email</string>
+    <string name="or_login_with">Or login with</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="remember_me">Remember me</string>
+    <string name="passwordTv">Password</string>
+    <string name="welcome">WELCOME</string>
+    <string name="please_login_with_your_information">Please login with your information\n</string>
+    <string name="home">Trang chủ</string>
+    <string name="notify">Thông báo</string>
+    <string name="me">Tôi</string>
+    <string name="order">Đơn hàng</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_notificaiotn">Fragment Notificaiotn</string>
+    <string name="choice">Bạn thèm món gì?</string>
+    <string name="name_of_user">Name of user</string>
+    <string name="follower">Người theo dõi</string>
+    <string name="folowing">Folowing</string>
+    <string name="fullname">Type your full name</string>
+    <string name="admin">admin</string>
+    <string name="log_out">Log out</string>
+    <string name="category">Categories</string>
+    <string name="pizza">Pizza</string>
+    <string name="recommended">Recommended</string>
+    <string name="ph">Phở</string>
+    <string name="_13_10">$13.10</string>
+    <string name="add_Data">Thêm sản phẩm vào gian hàng</string>
+    <string name="t_n_m_n_n">Tên món ăn</string>
+    <string name="type_price">Nhập giá của món ăn</string>
+    <string name="choose_an_image">Choose image</string>
+    <string name="finish_action">Finish</string>
+    <string name="type_food">Add food into database</string>
+    <string name="search">Search...</string>
+    <string name="history">History</string>
+    <string name="history_search">Lịch sử tìm kiếm</string>
+    <string name="name_food">name food</string>
+    <string name="price">Price</string>
+    <string name="price1">Giá : </string>
+    <string name="describe">Mô tả</string>
+    <string name="date_of_food">Hạn sử dụng</string>
+    <string name="date_of_food_Detail">Hạn sử dụng : </string>
+    <string name="sp">Spinner Android</string>
+    <string name="category_sp">Category</string>
+    <string name="email_address">Email Address</string>
+    <string name="date">Date</string>
+    <string name="hamburger">Hamburger</string>
+    <string name="class_taste">Class Taste</string>
+    <string name="bestseller">Bestseller</string>
+    <string name="t_n_c_a_m_n_n">Tên của món ăn</string>
+    <string name="min">min</string>
+    <string name="_5">5</string>
+    <string name="add_to_cart">Add to cart</string>
+    <string name="gi_m_n_n">Giá món ăn</string>
+    <string name="chicken_fried">Chicken Fried</string>
+    <string name="crispy">Crispy</string>
+    <string name="the_coffee_house">The Coffee House</string>
+    <string name="special_taste">Special taste</string>
+    <string name="healthy">Healthy</string>
+    <string name="salad">Salad</string>
+    <string name="noodle">Noodle</string>
+    <string name="tea">Tea</string>
+    <string name="bubble_tea">Bubble tea</string>
+    <string name="best_seller">Best seller</string>
+    <string name="cup_noodle">Cup Noodle</string>
+    <string name="yummy">Yummy</string>
+    <string name="meat">Meat</string>
+    <string name="johnsonville">Johnsonville</string>
+
+    <string name="_100_000">100.000</string>
+    <string name="description_food">Mô tả món ăn : </string>
+    <string name="description">Hamburger là một loại thực phẩm ưa thích trên khắp thế giới, nổi tiếng với hình dáng và cách phục vụ đặc biệt. Dưới đây là mô tả cơ bản về hamburger: Hamburger là một loại sandwich được làm từ một chiếc bánh mì mềm và giòn, thường được gọi là "buns." Buns thường có hình tròn và được chia thành hai phần. Bên trong hai lớp bánh mì này là một bức tường ngon miệng của các thành phần khác nhau, tạo nên một trải nghiệm ẩm thực đa dạng. Các thành phần cơ bản của một hamburger có thể bao gồm:
+        Buns (Bánh mì): Là lớp vỏ ngoại cùng của hamburger, thường được làm từ bột mì và nước, và có thể được nướng hoặc nướng sơ qua để tạo độ giòn và mềm.
+        Burger Pattie (Bánh xúc xích): Là phần chính của hamburger, burger pattie thường được làm từ thịt bò xay, nhưng cũng có thể là thịt gà, thịt bê, thịt heo hoặc thậm chí là thực phẩm thực vật cho những người ăn chay.
+        Pattie thường được nướng hoặc nướng chảo để chín chín đều và giữ lại độ ẩm. Rau sống: Rau sống như rau xà lách, cà chua, cà rốt, hành tây, và các loại rau sống khác thêm vào hương vị tươi mới và độ giòn.
+        Phô mai: Nhiều loại hamburger có thêm phô mai, thường là loại phô mai dễ tan chảy như cheddar, swiss, hoặc pepper jack, để thêm vào sự béo ngậy và ngon miệng.
+        Sốt: Sốt có thể là các loại sốt truyền thống như mayonnaise, mustard, ketchup, hoặc các loại sốt đặc biệt khác nhau tùy thuộc vào khẩu vị và phong cách của người làm.
+        Các thành phần khác: Nhiều người cũng thích thêm các thành phần như bơ, hành phi, ớt, hoặc nấm để tăng thêm hương vị và độ phức tạp. Một khi tất cả các thành phần đã được xếp chồng lên nhau giữa hai lớp bánh mì, hamburger thường được giữ lại bằng một que hoặc giữa bánh để giữ cho tất cả mọi thứ ổn định khi ăn.
+        Hamburger thường được phục vụ nhanh chóng và có thể đi kèm với các món ăn như khoai tây chiên, salad, hoặc nước giải khát.
+    </string>
+    <string name="add">Add</string>
+    <string name="them_gio_hang">Thêm vào giỏ hàng</string>
+    <string name="textview_quanity">1</string>
+    <string name="empty_cart">Giỏ hàng của bạn đang trống</string>
+    <string name="your_cart">Giỏ hàng của bạn</string>
+    <string name="delivery_fee">Phí vận chuyển</string>
+    <string name="fee">Đơn giá:</string>
+    <string name="_0">0</string>
+    <string name="sum_money">Tổng tiền:</string>
+    <string name="paying">Thanh toán</string>
+    <string name="title">title</string>
+    <string name="quality">Khối lượng:</string>
+
+    <string-array name="food">
+        <item>Lẩu</item>
+        <item>Cơm</item>
+        <item>Cá</item>
+        <item>Chiên</item>
+        <item>Thái</item>
+        <item>Thố</item>
+        <item>Mì</item>
+        <item>Bánh</item>
+        <item>Trà sữa</item>
+        <item>Trà xanh</item>
+        <item>Trà thái</item>
+        <item>Trà Matcha</item>
+        <item>Trà gừng</item>
+
+    </string-array>
+
+    <string-array name="category">
+        <item>Hamburger</item>
+        <item>Salad</item>
+        <item>Noodle</item>
+        <item>Chicken</item>
+        <item>Sausage</item>
+        <item>Coffee</item>
+        <item>Tea</item>
+        <item>Drink</item>
+    </string-array>
+
+</resources>
