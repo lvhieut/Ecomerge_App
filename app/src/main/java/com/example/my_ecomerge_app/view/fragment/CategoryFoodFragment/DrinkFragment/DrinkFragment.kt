@@ -31,26 +31,28 @@ class DrinkFragment : Fragment() {
 
         CoroutineScope(Dispatchers.Main).launch {
             val listDrink = MyApplication.appDatabase.orderDao().getAllDrink()
-            Log.d("burger","${listDrink}")
+            Log.d("burger", "${listDrink}")
             val adapter = AdapterDrink(listDrink.toMutableList(), requireContext())
             binding.rcvDrink.adapter = adapter
             adapter.setOnItemClick(object : OnItemClick {
                 override fun onItemClick(position: Int) {
                     val selectedItem = listDrink[position]
                     val fragmentDetail = DetailFragment()
-                    val order = Order(selectedItem.imgFood,
+                    val order = Order(
+                        selectedItem.imgFood,
                         selectedItem.nameFood,
                         selectedItem.price,
                         selectedItem.describe,
                         selectedItem.date,
-                        selectedItem.type)
+                        selectedItem.type
+                    )
                     val bundle = Bundle().apply {
-                        putParcelable("order",order)
+                        putParcelable("order", order)
                     }
                     sharedViewModel.setSharedData(order)
                     fragmentDetail.arguments = bundle
                     val transaction = requireActivity().supportFragmentManager.beginTransaction()
-                    transaction.replace(R.id.framelayout,fragmentDetail)
+                    transaction.replace(R.id.framelayout, fragmentDetail)
                     transaction.addToBackStack(null)
                     transaction.commit()
                 }
@@ -68,7 +70,6 @@ class DrinkFragment : Fragment() {
         // Inflate the layout for this fragment
         return binding.root
     }
-
 
 
 }

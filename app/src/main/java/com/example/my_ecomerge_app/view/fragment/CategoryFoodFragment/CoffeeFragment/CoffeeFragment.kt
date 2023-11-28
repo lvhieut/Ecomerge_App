@@ -32,10 +32,10 @@ class CoffeeFragment : Fragment() {
         CoroutineScope(Dispatchers.Main).launch {
             val listCoffee = MyApplication.appDatabase.orderDao().getAllCoffee()
             Log.d("fried", "${listCoffee}")
-            val adapter =  AdapterCoffee(listCoffee.toMutableList(), requireContext())
+            val adapter = AdapterCoffee(listCoffee.toMutableList(), requireContext())
             coffeeBinding.rcvCoffee.adapter = adapter
 
-            adapter.setOnItemClick(object : OnItemClick{
+            adapter.setOnItemClick(object : OnItemClick {
                 override fun onItemClick(position: Int) {
                     val selectedItem = listCoffee[position]
                     val fragmentDetail = DetailFragment()
@@ -67,7 +67,7 @@ class CoffeeFragment : Fragment() {
                 }
 
             })
-            
+
         }
     }
 
