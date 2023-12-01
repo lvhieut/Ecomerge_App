@@ -40,10 +40,6 @@ class LoginActivity : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
 
-
-
-
-
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
@@ -69,17 +65,13 @@ class LoginActivity : AppCompatActivity() {
                 firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
                     progressDialog.dismiss()
                     if (it.isSuccessful) {
-
-
                         checkUserAccessLevel(firebaseAuth.currentUser?.uid)
-
                     } else {
                         Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
                     }
                 }
             } else {
                 Toast.makeText(this, "Empty Fields Are not Allowed !!", Toast.LENGTH_SHORT).show()
-
             }
         }
     }
@@ -109,7 +101,6 @@ class LoginActivity : AppCompatActivity() {
                     Log.d("---", "get failed with ", exception)
                 }
         }
-
     }
 
     override fun onStart() {
@@ -132,7 +123,6 @@ class LoginActivity : AppCompatActivity() {
             handleResults(task)
         }
     }
-
     private fun handleResults(task: Task<GoogleSignInAccount>) {
 
         if (task.isSuccessful){
@@ -144,7 +134,6 @@ class LoginActivity : AppCompatActivity() {
             Toast.makeText(this, task.exception.toString() , Toast.LENGTH_SHORT).show()
         }
     }
-
     private fun updateUI(account: GoogleSignInAccount) {
         val credential = GoogleAuthProvider.getCredential(account.idToken , null)
         progressDialog.show()

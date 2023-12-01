@@ -1,6 +1,5 @@
 package com.example.my_ecomerge_app.view.adapter
 
-import android.app.AlertDialog
 import android.content.Context
 import android.net.Uri
 import android.util.Log
@@ -36,20 +35,20 @@ class AdapterCart(private var listCart: MutableList<Cart>, private var context: 
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val cart = listCart[position]
-        val imageUri = Uri.parse(cart.imgFood)
+        val listCart = listCart[position]
+        val imageUri = Uri.parse(listCart.imgFood)
         Log.d("---", imageUri.toString())
-        val formattedPrice = formatPrice(cart.price)
+        val formattedPrice = formatPrice(listCart.price)
 
         Glide.with(context)
             .load(imageUri)
             .fitCenter()
             .placeholder(R.drawable.pho_icon)
             .into(holder.imgFood)
-        holder.tvItem.text = cart.nameFood
+        holder.tvItem.text = listCart.nameFood
         holder.tvPrice.text = formattedPrice
-        var quantity = cart.quantity
-        val getPrice = cart.price * quantity.toDouble()
+        var quantity = listCart.quantity
+        var getPrice = listCart.price * quantity.toDouble()
         holder.tvTotal.text = formatPrice(getPrice)
 
         holder.tvQuantity.text = quantity.toString()
@@ -60,57 +59,24 @@ class AdapterCart(private var listCart: MutableList<Cart>, private var context: 
 
             quantity++
             holder.tvQuantity.text = quantity.toString()
-            calculate = quantity * cart.price
+            calculate = quantity * listCart.price
             holder.tvTotal.text = formatPrice(calculate)
 
-            cart.quantity = quantity
-//            listCart.price = calculate
-
-            CoroutineScope(Dispatchers.IO).launch {
-                MyApplication.appDatabase.cartDao().updateItem(cart)
-            }
         }
         holder.btnMinus.setOnClickListener {
             quantity--
-            val currentQuantity = quantity
             holder.tvQuantity.text = quantity.toString()
-
-            cart.quantity = quantity
-//            listCart.price = calculate
-            CoroutineScope(Dispatchers.IO).launch {
-                MyApplication.appDatabase.cartDao().updateItem(cart)
-            }
             if (quantity == 0) {
-                if (quantity == 0) {
-                    AlertDialog.Builder(context)
-                        .setTitle("Delete")
-                        .setIcon(R.drawable.baseline_warning_24)
-                        .setMessage("Bạn có muốn xoá sản phẩm này không?")
-                        .setPositiveButton("Có") { dialog, _ ->
-                            // Xoá phần tử khỏi danh sách và cập nhật UI
-                            listCart.removeAt(position)
-                            notifyDataSetChanged()
-                            // Xoá phần tử từ cơ sở dữ liệu
-                            CoroutineScope(Dispatchers.IO).launch {
-                                MyApplication.appDatabase.cartDao().deleteItemById(cart.id)
-                            }
-                            dialog.dismiss()
-                        }
-                        .setNegativeButton("Không") { dialog, _ ->
-                            holder.tvTotal.text = formatPrice(cart.price)
-                            val setQuantity = "1"
-                            holder.tvQuantity.text = setQuantity
-                            CoroutineScope(Dispatchers.IO).launch {
-                                cart.quantity = setQuantity.toInt()
-                                MyApplication.appDatabase.cartDao().updateItem(cart)
-                            }
-                            dialog.dismiss()
-                        }
-                        .create()
-                        .show()
+
+                CoroutineScope(Dispatchers.IO).launch {
+                    MyApplication.appDatabase.cartDao().deleteItem(listCart)
+//                    Log.d("delete",listCart.)
                 }
             }
+
         }
+
+
     }
 
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

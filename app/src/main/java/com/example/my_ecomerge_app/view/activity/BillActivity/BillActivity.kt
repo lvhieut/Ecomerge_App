@@ -13,7 +13,11 @@ class BillActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.swButton.setOnCheckedChangeListener { compoundButton, isChecked ->
+<<<<<<< HEAD
             if (isChecked){
+=======
+            if (isChecked) {
+>>>>>>> 785ca8b (add bill features and format code .)
                 binding.linearLayout5.visibility = View.VISIBLE
                 binding.tvPickThat.visibility = View.GONE
             } else {

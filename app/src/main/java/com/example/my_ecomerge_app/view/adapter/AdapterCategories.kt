@@ -13,15 +13,17 @@ import com.example.my_ecomerge_app.model.Categories
 import com.example.my_ecomerge_app.view.Interface.OnItemClickListener
 
 
-class AdapterCategories(private var itemList: ArrayList<Categories>,
-                        private val context: Context,
-                        private val itemClickListener: OnItemClickListener
+class AdapterCategories(
+    private var itemList: ArrayList<Categories>,
+    private val context: Context,
+    private val itemClickListener: OnItemClickListener
 ) :
     RecyclerView.Adapter<AdapterCategories.MyViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_categories, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_categories, parent, false)
         return MyViewHolder(view)
 
     }
@@ -44,7 +46,7 @@ class AdapterCategories(private var itemList: ArrayList<Categories>,
 
     }
 
-    inner class MyViewHolder( itemView: View ): RecyclerView.ViewHolder(itemView) {
+    inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imgCategories: ImageView = itemView.findViewById(R.id.imgImageItem)
         val tvItem: TextView = itemView.findViewById(R.id.tvItem)
     }
