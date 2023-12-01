@@ -1,5 +1,6 @@
 package com.example.my_ecomerge_app.view.fragment.GioHangFragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.my_ecomerge_app.application.MyApplication
 import com.example.my_ecomerge_app.databinding.FragmentOrderBinding
+import com.example.my_ecomerge_app.view.activity.BillActivity.BillActivity
 import com.example.my_ecomerge_app.view.adapter.AdapterCart
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -48,6 +50,10 @@ class CartFragment : Fragment() {
                 rcvGiohang.setHasFixedSize(true)
                 rcvGiohang.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
             }
+        }
+
+        binding.btnThanhtoan.setOnClickListener {
+            startActivity(Intent(requireActivity(),BillActivity::class.java))
         }
     }
 

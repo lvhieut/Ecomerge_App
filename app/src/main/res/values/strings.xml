@@ -103,6 +103,14 @@
     <string name="paying">Thanh toán</string>
     <string name="title">title</string>
     <string name="quality">Khối lượng:</string>
+    <string name="your_order">Your Order</string>
+    <string name="address_delivery">ADDRESS DELIVERY</string>
+    <string name="order_2">Tôi muốn đặt giùm người thân</string>
+    <string name="t_n_ng_i_nh_n">Tên người nhận</string>
+    <string name="danh_s_ch">Danh sách</string>
+    <string name="pick_that">Chọn mục này nếu bạn muốn đơn hàng được giao cho người thân</string>
+    <string name="detail_bill">CHI TIẾT ĐƠN HÀNG</string>
+    <string name="add_food">Thêm món</string>
 
     <string-array name="food">
         <item>Lẩu</item>

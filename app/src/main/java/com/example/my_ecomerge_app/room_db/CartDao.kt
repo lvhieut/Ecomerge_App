@@ -5,6 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Update
 import com.example.my_ecomerge_app.model.Cart
 
 @Dao
@@ -14,6 +15,13 @@ interface CartDao {
 
     @Delete
     suspend fun deleteItem(cartItems : Cart)
+
+    @Update
+    suspend fun updateItem(cartItems: Cart)
+
+    @Query("DELETE FROM Cart WHERE id = :itemId")
+    suspend fun deleteItemById(itemId: Int)
+
 
     @Query("SELECT * FROM Cart")
     suspend fun getAllCart(): List<Cart>

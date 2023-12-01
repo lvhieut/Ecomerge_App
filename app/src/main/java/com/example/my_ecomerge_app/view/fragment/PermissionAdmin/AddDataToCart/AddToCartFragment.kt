@@ -14,18 +14,13 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import com.example.my_ecomerge_app.R
 import com.example.my_ecomerge_app.application.MyApplication
 import com.example.my_ecomerge_app.databinding.FragmentAddToCartBinding
-import com.example.my_ecomerge_app.model.CategorySpinner
 import com.example.my_ecomerge_app.model.Order
-import com.example.my_ecomerge_app.view.adapter.CategoryAdapter
-import com.example.my_ecomerge_app.view.fragment.ShareVm
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.nio.file.Path
 
 
 class AddToCartFragment : Fragment() {

@@ -1,7 +1,6 @@
 package com.example.my_ecomerge_app.view.fragment.CategoryFoodFragment.NoodleFragment
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -15,7 +14,7 @@ import com.example.my_ecomerge_app.model.Order
 import com.example.my_ecomerge_app.view.Interface.OnItemClick
 import com.example.my_ecomerge_app.view.adapter.AdapterNoodle
 import com.example.my_ecomerge_app.view.fragment.DetailFragment.DetailFragment
-import com.example.my_ecomerge_app.view.fragment.ShareVm
+import com.example.my_ecomerge_app.view.fragment.viewmodel.ShareVm
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

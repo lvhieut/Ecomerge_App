@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide
 import com.example.my_ecomerge_app.application.MyApplication
 import com.example.my_ecomerge_app.databinding.FragmentAddFoodBinding
 import com.example.my_ecomerge_app.model.Cart
-import com.example.my_ecomerge_app.view.fragment.ShareVm
+import com.example.my_ecomerge_app.view.fragment.viewmodel.ShareVm
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

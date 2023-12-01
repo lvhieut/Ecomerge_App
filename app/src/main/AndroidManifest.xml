@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
 
     <application
         android:name=".application.MyApplication"
@@ -17,23 +20,29 @@
         android:icon="@drawable/food_delivery1"
         android:label="My_Ecomerge_App"
         android:largeHeap="true"
-        android:roundIcon="@color/icon_app"
-        android:usesCleartextTraffic="true"
         android:requestLegacyExternalStorage="true"
+        android:roundIcon="@color/icon_app"
         android:supportsRtl="true"
         android:theme="@style/Theme.My_Ecomerge_App"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".view.activity.BillActivity.BillActivity"
+            android:exported="false" />
         <activity
             android:name=".view.activity.AdminActivity"
             android:exported="false" />
         <activity
             android:name=".view.activity.HomeAcitivity"
-            android:windowSoftInputMode="adjustPan|adjustResize"
-            android:exported="false" />
-        <receiver android:name=".network.NetworkChangeReceiver"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan|adjustResize" />
+
+        <receiver
+            android:name=".network.NetworkChangeReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"
+                <action
+                    android:name="android.net.conn.CONNECTIVITY_CHANGE"
                     tools:ignore="BatteryLife" />
             </intent-filter>
         </receiver>
@@ -46,7 +55,6 @@
             </intent-filter>
         </service>
 
-
         <activity
             android:name=".view.activity.SignUpActivity"
             android:exported="false" />
@@ -55,8 +63,8 @@
             android:exported="false" />
         <activity
             android:name=".view.activity.SplashScreenAcitivity"
-            android:windowSoftInputMode="adjustResize"
-            android:exported="true">
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -65,8 +73,8 @@
         </activity>
         <activity
             android:name=".view.activity.MainActivity"
-            android:windowSoftInputMode="adjustResize"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

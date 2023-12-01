@@ -7,7 +7,7 @@
         <import type="android.view.View"/>
         <variable
             name="viewModel"
-            type="com.example.my_ecomerge_app.view.fragment.ShareVm" />
+            type="com.example.my_ecomerge_app.view.fragment.viewmodel.ShareVm" />
 
     </data>
 

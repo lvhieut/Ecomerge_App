@@ -12,10 +12,9 @@ import com.example.my_ecomerge_app.application.MyApplication
 import com.example.my_ecomerge_app.databinding.FragmentDrinkBinding
 import com.example.my_ecomerge_app.model.Order
 import com.example.my_ecomerge_app.view.Interface.OnItemClick
-import com.example.my_ecomerge_app.view.adapter.AdapterBurger
 import com.example.my_ecomerge_app.view.adapter.AdapterDrink
 import com.example.my_ecomerge_app.view.fragment.DetailFragment.DetailFragment
-import com.example.my_ecomerge_app.view.fragment.ShareVm
+import com.example.my_ecomerge_app.view.fragment.viewmodel.ShareVm
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
