@@ -8,6 +8,8 @@ import androidx.room.Room
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.my_ecomerge_app.room_db.AppDatabae
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 
 class MyApplication: Application() {
@@ -21,14 +23,8 @@ class MyApplication: Application() {
         super.onCreate()
         createChannelNotification()
 
-//        val MIGRATION_2_3 : Migration =  object : Migration(2, 3) {
-//            override fun migrate(database: SupportSQLiteDatabase) {
-//                database.execSQL("CREATE TABLE `Fruit` (`id` INTEGER, "
-//                        + "`name` TEXT, PRIMARY KEY(`id`))")
-//            }
-//        }
+
         appDatabase = Room.databaseBuilder(applicationContext, AppDatabae::class.java, "database")
-//            .addMigrations(MIGRATION_2_3)
             .build()
 
     }
@@ -39,5 +35,14 @@ class MyApplication: Application() {
             val manager = getSystemService(NotificationManager::class.java)
             manager.createNotificationChannel(channel)
         }
+    }
+
+    val BASE_URL = "https://revgeocode.search.hereapi.com/v1"
+
+    fun getIntance() : Retrofit {
+        return Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
     }
 }

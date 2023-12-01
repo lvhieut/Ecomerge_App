@@ -85,7 +85,9 @@ dependencies {
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
     //rounded image
     implementation ("com.makeramen:roundedimageview:2.3.0")
-
     //swipe layout
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01")
+    //retrofit
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
 }

@@ -9,7 +9,7 @@ data class Cart(
     val id: Int = 0,
     val imgFood: String,
     val nameFood: String,
-    val price: Double,
+    var price: Double,
     val describe: String,
     val date: String,
     val type: String,
