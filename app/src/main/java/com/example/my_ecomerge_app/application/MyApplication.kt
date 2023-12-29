@@ -17,6 +17,18 @@ class MyApplication: Application() {
     companion object{
         val CHANNEL_ID : String = "push_notification_id"
         lateinit var appDatabase: AppDatabae
+        private lateinit var retrofitInstance: Retrofit
+        val BASE_URL = "https://revgeocode.search.hereapi.com/v1"
+
+        fun getInstance(): Retrofit {
+            if (!::retrofitInstance.isInitialized) {
+                retrofitInstance = Retrofit.Builder()
+                    .baseUrl(BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build()
+            }
+            return retrofitInstance
+        }
     }
 
     override fun onCreate() {
@@ -26,6 +38,8 @@ class MyApplication: Application() {
 
         appDatabase = Room.databaseBuilder(applicationContext, AppDatabae::class.java, "database")
             .build()
+
+
 
     }
 
@@ -37,12 +51,6 @@ class MyApplication: Application() {
         }
     }
 
-    val BASE_URL = "https://revgeocode.search.hereapi.com/v1"
 
-    fun getIntance() : Retrofit {
-        return Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-    }
+
 }

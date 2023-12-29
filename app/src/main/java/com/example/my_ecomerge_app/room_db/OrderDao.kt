@@ -21,8 +21,11 @@ interface OrderDao {
     @Query("SELECT * FROM `order`")
     suspend fun getAllItems(): List<Order>
 
+    @Query("SELECT * FROM `order` WHERE id = :orderId")
+    suspend fun getOrderById(orderId: Int): Order?
+
     @Query("SELECT * FROM `order` WHERE nameFood LIKE '%' || :searchText || '%'")
-    suspend fun searchItems(searchText: String?): List<Order?>?
+    suspend fun searchItems(searchText: String?): MutableList<Order>
 
     @Query("SELECT * FROM `order` WHERE type = 'Hamburger'")
     suspend fun getAllBurgersType(): List<Order>

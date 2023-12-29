@@ -100,7 +100,6 @@ class HomeFragment : Fragment(), OnItemClickListener {
         homeBinding.rlvSearch.setOnClickListener {
             val fragment = SearchFragment()
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_in)
             transaction.replace(R.id.framelayout, fragment)
             transaction.addToBackStack(null)  // (Tùy chọn) cho phép quay lại fragment trước đó
             transaction.commit()

@@ -36,6 +36,7 @@ class HamburgerFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         CoroutineScope(Dispatchers.Main).launch {
+
             val listBurger = MyApplication.appDatabase.orderDao().getAllBurgersType()
             Log.d("burger", "${listBurger}")
             val adapter = AdapterBurger(listBurger.toMutableList(), requireContext())
@@ -65,8 +66,11 @@ class HamburgerFragment : Fragment() {
                     transaction.addToBackStack(null)
                     transaction.commit()
                 }
-
             })
+        }
+
+        burgerScreenBinding.btnBack.setOnClickListener {
+            requireActivity().supportFragmentManager.popBackStack()
         }
 
     }

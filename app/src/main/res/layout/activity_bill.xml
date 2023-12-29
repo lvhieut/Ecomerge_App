@@ -5,12 +5,28 @@
 
     <data>
 
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.example.my_ecomerge_app.view.fragment.viewmodel.BillViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".view.activity.BillActivity.BillActivity">
+
+        <ProgressBar
+            android:id="@+id/progress_circular"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:indeterminateDrawable="@anim/progressbar_animation"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/linearLayout"
@@ -22,29 +38,33 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnBackBill"
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:padding="10dp"
+                android:layout_marginStart="-10dp"
+                android:padding="15dp"
                 android:src="@drawable/ic_arrowleft_black" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginEnd="60dp"
-                android:fontFamily="@font/roboto"
+                android:layout_marginEnd="50dp"
                 android:gravity="center"
                 android:text="@string/your_order"
+                android:textAllCaps="false"
+                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="@dimen/dimen_textview_20sp" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.core.widget.NestedScrollView
+            android:id="@id/nestedScrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="52dp"
+            android:layout_marginBottom="110dp"
+            app:layout_constraintBottom_toTopOf="@+id/constrainBottom"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
@@ -57,6 +77,7 @@
                     android:id="@+id/view_1"
                     android:layout_width="match_parent"
                     android:layout_height="5dp"
+                    android:layout_marginTop="4dp"
                     android:background="#4DAEA4A4"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -69,32 +90,45 @@
                     android:layout_margin="9dp"
                     android:fontFamily="@font/roboto"
                     android:gravity="center"
-                    android:text="@string/address_delivery"
+                    android:text="@string/adress_delivery"
                     android:textSize="@dimen/dimen_textview_20sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/view_1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/changeAddessDelivery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="13dp"
+                    android:text="@string/change_address_delivery"
+                    android:textColor="@color/xanh"
+                    android:textSize="@dimen/dimen_textview_20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/view_1" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/imgMapLocation"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_margin="9dp"
-                    android:src="@drawable/map"
+                    android:padding="1dp"
+                    android:src="@drawable/maps_and_flags"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvDelivery" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvLocation"
-                    android:layout_width="340dp"
+                    android:layout_width="330dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="@dimen/dimen_marginTop_10dp"
                     android:maxLines="2"
+                    android:text="@string/adress"
                     android:textSize="16sp"
                     app:layout_constraintStart_toEndOf="@+id/imgMapLocation"
-                    app:layout_constraintTop_toBottomOf="@+id/tvDelivery"
-                    tools:text="9 P. Duy Tân, Dịch Vọng Hậu, Cầu Giấy, Hà Nội 123186, Việt Nam" />
+                    app:layout_constraintTop_toBottomOf="@+id/tvDelivery" />
 
                 <View
                     android:id="@+id/view_2"
@@ -154,6 +188,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvToi">
 
@@ -166,13 +201,15 @@
                             <androidx.appcompat.widget.AppCompatImageView
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:padding="7dp"
+                                android:layout_marginTop="4dp"
+                                android:padding="10dp"
                                 android:src="@drawable/user" />
 
                             <androidx.appcompat.widget.AppCompatEditText
                                 android:id="@+id/edtNameOfPerson"
                                 android:layout_width="240dp"
                                 android:layout_height="wrap_content"
+                                android:backgroundTint="@color/xanh"
                                 android:hint="@string/t_n_ng_i_nh_n" />
 
                             <androidx.appcompat.widget.AppCompatImageView
@@ -183,7 +220,7 @@
                                 android:padding="2dp"
                                 android:src="@drawable/contact_book" />
 
-                            <TextView
+                            <androidx.appcompat.widget.AppCompatTextView
                                 android:id="@+id/tvContact"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -201,20 +238,18 @@
                             <androidx.appcompat.widget.AppCompatImageView
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:padding="7dp"
+                                android:layout_marginTop="4dp"
+                                android:padding="10dp"
                                 android:src="@drawable/telephone" />
 
                             <androidx.appcompat.widget.AppCompatEditText
                                 android:id="@+id/edtNumberPerSon"
                                 android:layout_width="340dp"
                                 android:layout_height="wrap_content"
+                                android:backgroundTint="@color/xanh"
                                 android:hint="@string/t_n_ng_i_nh_n" />
-
                         </androidx.appcompat.widget.LinearLayoutCompat>
-
                     </LinearLayout>
-
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <View
@@ -228,49 +263,289 @@
                     app:layout_constraintTop_toBottomOf="@+id/constrainLayout3" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constrainLayout4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/constrainLayout4"
-                    app:layout_constraintTop_toBottomOf="@+id/view_3"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent">
+                    app:layout_constraintTop_toBottomOf="@+id/view_3">
+
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/detail_bill"
                         android:id="@+id/tvDetailBill"
-                        android:layout_margin="9dp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/dimen_textview_20sp"/>
-                    <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/add_food"
-                        app:layout_constraintStart_toEndOf="@+id/tvDetailBill"
+                        android:layout_margin="9dp"
+                        android:text="@string/detail_bill"
+                        android:textSize="@dimen/dimen_textview_20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tvAddFood"
-                        android:layout_marginTop="9dp"
-                        app:layout_constraintEnd_toEndOf="parent" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="6dp"
+                        android:text="@string/add_food"
+                        android:textColor="@color/xanh"
+                        android:textSize="@dimen/dimen_textview_16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.892"
+                        app:layout_constraintStart_toEndOf="@+id/tvDetailBill"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:layout_editor_absoluteY="9dp" />
+
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        app:layout_constraintTop_toBottomOf="@+id/tvDetailBill"
-                        android:layout_marginStart="9dp"
+                        android:id="@+id/imgAvt"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="9dp"
                         android:src="@drawable/image_song"
                         app:layout_constraintStart_toStartOf="parent"
-                        android:layout_marginTop="9dp"/>
+                        app:layout_constraintTop_toBottomOf="@+id/tvDetailBill" />
 
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/my_name"
+                        android:textSize="@dimen/dimen_textview_16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.025"
+                        app:layout_constraintStart_toEndOf="@+id/imgAvt"
+                        app:layout_constraintTop_toBottomOf="@id/tvDetailBill" />
+
+                    <View
+                        android:id="@+id/view_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="@dimen/dimen_marginTop_20dp"
+                        android:background="#4DAEA4A4"
+                        android:padding="4dp"
+                        app:layout_constraintTop_toBottomOf="@+id/imgAvt" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcvBill"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view_4"
+                        tools:itemCount="2"
+                        tools:listitem="@layout/item_bill_order" />
+
+                    <View
+                        android:id="@+id/view_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="@dimen/dimen_marginTop_20dp"
+                        android:background="#4DAEA4A4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rcvBill" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvShipfee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="9dp"
+                        android:text="@string/ship_fee"
+                        android:textSize="@dimen/dimen_textview_16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view_5" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvFeeShip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/_2000"
+                        android:textSize="@dimen/dimen_textview_16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.93"
+                        app:layout_constraintStart_toEndOf="@id/tvShipfee"
+                        app:layout_constraintTop_toBottomOf="@id/view_5" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="30dp"
+                        android:layout_height="40dp"
+                        android:padding="5dp"
+                        android:src="@drawable/discount"
+                        app:layout_constraintEnd_toStartOf="@+id/tvFeeShip"
+                        app:layout_constraintTop_toBottomOf="@id/view_5" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="9dp"
+                        android:text="@string/fee_service"
+                        android:textSize="@dimen/dimen_textview_16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvShipfee" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvFeeService"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/_2000"
+                        android:textSize="@dimen/dimen_textview_16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.93"
+                        app:layout_constraintStart_toEndOf="@id/tvShipfee"
+                        app:layout_constraintTop_toBottomOf="@id/tvShipfee" />
+
+                    <View
+                        android:id="@+id/view_6"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#4DAEA4A4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvFeeService" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPaymentMethod"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="9dp"
+                        android:text="@string/payment_method"
+                        android:textSize="@dimen/dimen_textview_20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/view_6" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvChange"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="6dp"
+                        android:text="@string/change"
+                        android:textColor="@color/xanh"
+                        android:textSize="@dimen/dimen_textview_16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.892"
+                        app:layout_constraintStart_toEndOf="@+id/tvPaymentMethod"
+                        app:layout_constraintTop_toBottomOf="@id/view_6"
+                        tools:layout_editor_absoluteY="9dp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvDisplayPayment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="@string/paying_in_cash"
+                        app:layout_constraintStart_toEndOf="@id/imgDisplay"
+                        app:layout_constraintTop_toBottomOf="@id/tvPaymentMethod" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgDisplay"
+                        android:layout_width="20dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="9dp"
+                        android:src="@drawable/discount_black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvPaymentMethod" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
-
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constrainBottom"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <View
+                android:id="@+id/view_7"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="9dp"
+                android:text="@string/sum"
+                android:textSize="@dimen/dimen_textview_16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="18dp"
+                android:text="@string/_100_000"
+                android:textSize="@dimen/dimen_textview_16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnCheckout"
+                style="@style/button_text"
+                android:layout_width="230dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="23dp"
+                android:background="@drawable/bg_button_red"
+                android:text="@string/finish"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/customLinear"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_margin="9dp"
+                android:background="@drawable/bg_bottom_linearlayout_bill_scr"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSum">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="26dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:padding="1dp"
+                    android:src="@drawable/discount_black" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="20dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/more" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="70dp"
+                    android:layout_height="37dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="14dp"
+                    android:text="@string/apply_discount"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

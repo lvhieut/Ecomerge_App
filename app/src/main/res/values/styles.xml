@@ -4,4 +4,22 @@
         <item name="android:textColor">#F00</item>
         <item name="android:textSize">44sp</item>
     </style>
+
+    <style name="button_text" parent="TextAppearance.AppCompat.Widget.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/dimen_textview_16sp</item>
+        <item name="fontFamily">@font/bevan_regular</item>
+    </style>
+
+    <style name="textview_normal_bill_second" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/dimen_textview_20sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="textview_bold_bill_second" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/dimen_textview_20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
 </resources>

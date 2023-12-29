@@ -69,6 +69,11 @@ class CoffeeFragment : Fragment() {
             })
 
         }
+
+        coffeeBinding.btnBack.setOnClickListener {
+            requireActivity().supportFragmentManager.popBackStack()
+        }
+
     }
 
     override fun onCreateView(

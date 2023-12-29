@@ -60,6 +60,10 @@ class DrinkFragment : Fragment() {
 
         }
 
+        binding.btnBack.setOnClickListener {
+            requireActivity().supportFragmentManager.popBackStack()
+        }
+
     }
 
     override fun onCreateView(

@@ -25,4 +25,7 @@ interface CartDao {
 
     @Query("SELECT * FROM Cart")
     suspend fun getAllCart(): List<Cart>
+
+    @Query("SELECT nameFood FROM Cart")
+    suspend fun getAllNameCart() : List<String>
 }

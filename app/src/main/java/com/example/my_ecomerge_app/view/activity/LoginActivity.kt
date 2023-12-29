@@ -70,7 +70,6 @@ class LoginActivity : AppCompatActivity() {
                     progressDialog.dismiss()
                     if (it.isSuccessful) {
 
-
                         checkUserAccessLevel(firebaseAuth.currentUser?.uid)
 
                     } else {

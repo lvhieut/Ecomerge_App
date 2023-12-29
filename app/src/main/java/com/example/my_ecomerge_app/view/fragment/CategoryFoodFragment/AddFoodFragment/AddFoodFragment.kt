@@ -10,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.example.my_ecomerge_app.application.MyApplication
 import com.example.my_ecomerge_app.databinding.FragmentAddFoodBinding
 import com.example.my_ecomerge_app.model.Cart
+import com.example.my_ecomerge_app.model.Order
 import com.example.my_ecomerge_app.view.fragment.viewmodel.ShareVm
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.coroutines.CoroutineScope
@@ -30,6 +31,9 @@ class AddFoodFragment : BottomSheetDialogFragment() {
 
         var value = 1
 
+
+
+
         binding.btnIncrease.setOnClickListener{
             value++
             binding.tvQuanity.text = value.toString()
@@ -49,6 +53,20 @@ class AddFoodFragment : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
+        val order : Order? = arguments?.getParcelable("thisOrder")
+
+        if (order != null){
+            val price = order.price
+            val formatCurrency= formatCurrency(priceFood = price.toString())
+            Glide.with(requireContext())
+                .load(order.imgFood)
+                .into(binding.imgFood)
+
+            binding.tvNameFood.text = order.nameFood
+            binding.tvPriceFood.text = formatCurrency
+        }
 
         sharedViewModel.getSharedData().observe(viewLifecycleOwner, Observer { order ->
             order.let {

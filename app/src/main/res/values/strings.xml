@@ -44,8 +44,9 @@
     <string name="choose_an_image">Choose image</string>
     <string name="finish_action">Finish</string>
     <string name="type_food">Add food into database</string>
-    <string name="search">Search...</string>
-    <string name="history">History</string>
+    <string name="search">     Search...</string>
+    <string name="history">Lịch sử tìm kiếm</string>
+    <string name="deleteAll">Xoá tất cả</string>
     <string name="history_search">Lịch sử tìm kiếm</string>
     <string name="name_food">name food</string>
     <string name="price">Price</string>
@@ -103,7 +104,7 @@
     <string name="paying">Thanh toán</string>
     <string name="title">title</string>
     <string name="quality">Khối lượng:</string>
-    <string name="your_order">Your Order</string>
+    <string name="your_order">Đơn hàng của bạn</string>
     <string name="address_delivery">ADDRESS DELIVERY</string>
     <string name="order_2">Tôi muốn đặt giùm người thân</string>
     <string name="t_n_ng_i_nh_n">Tên người nhận</string>
@@ -111,6 +112,46 @@
     <string name="pick_that">Chọn mục này nếu bạn muốn đơn hàng được giao cho người thân</string>
     <string name="detail_bill">CHI TIẾT ĐƠN HÀNG</string>
     <string name="add_food">Thêm món</string>
+    <string name="my_name">Hiếu Lê</string>
+    <string name="change">Thay đổi</string>
+    <string name="_1">1</string>
+    <string name="ship_fee">Phí Ship</string>
+    <string name="fee_service">Phí Dịch Vụ</string>
+    <string name="_2000">2000</string>
+    <string name="payment_method">CÁCH THANH TOÁN</string>
+    <string name="paying_in_cash">Trả tiền mặt khi nhận hàng</string>
+    <string name="sum">Tổng</string>
+    <string name="apply_discount">Áp dụng mã giảm</string>
+    <string name="finish">Đặt đơn</string>
+    <string name="adress">9 P. Duy Tân, Dịch Vọng Hậu, Cầu Giấy, Hà Nội 123186, Việt Nam</string>
+    <string name="adress_delivery">ĐỊA CHỈ ĐẶT HÀNG</string>
+    <string name="type_ur_address_delivery">Nhập địa chỉ giao hàng</string>
+    <string name="change_address_delivery">Thay đổi</string>
+    <string name="delivery_fee_text">Phí vận chuyển</string>
+    <string name="address_delivery_search">Giao tới địa chỉ</string>
+    <string name="search_result">Kết quả tìm kiếm</string>
+    <string name="description_1">Mô tả :</string>
+    <string name="profile">Trang cá nhân</string>
+    <string name="my_name_1">Lê Văn Hiếu</string>
+    <string name="member">Thành viên</string>
+    <string name="order_food">Đơn hàng đồ ăn</string>
+    <string name="ch_x_c_nh_n">Chờ xác nhận</string>
+    <string name="cho_lay_hang">Chờ lấy hàng</string>
+    <string name="cho_giao_hang">Chờ giao hàng</string>
+    <string name="the_order">Đơn hàng</string>
+    <string name="cancel_order">Huỷ đơn</string>
+    <string name="don_dat_hang_truoc">Đơn đặt hàng trước</string>
+    <string name="loi_cam_on">Cảm ơn bạn đã cho shop của Hiếu cơ hội được phục vụ. Shop của Hiếu sẽ giao hàng cho bạn trước 1 tiếng kể từ khi bạn đặt đơn hàng và tài xế sẽ gọi điện thoại liên hệ trước khi giao hàng.</string>
+    <string name="location_buy_thing">Nơi mua hàng</string>
+    <string name="location_delivery">Nơi giao hàng</string>
+    <string name="my_business">Tiệm của Hiếu</string>
+    <string name="tổng">Tổng</string>
+    <string name="my_shop">Liên hệ - CSKH Tiệm của Hiếu</string>
+    <string name="my_number_phone">Hotline : 0357709337</string>
+    <string name="my_email">Email : levanhieu1566@gmail.com</string>
+    <string name="my_description">Tiệm của Hiếu sẵn sàng hỗ trợ trong trường hợp quý khách gặp sự cố với đơn hàng</string>
+    <string name="account">Tài khoản</string>
+    <string name="notifycation">Chưa có thông báo nào</string>
 
     <string-array name="food">
         <item>Lẩu</item>
@@ -125,8 +166,13 @@
         <item>Trà xanh</item>
         <item>Trà thái</item>
         <item>Trà Matcha</item>
-        <item>Trà gừng</item>
-
+        <item>Bánh mì</item>
+        <item>Hamburger</item>
+        <item>Gà rán</item>
+        <item>Salad</item>
+        <item>Xúc xích</item>
+        <item>Cà Phê</item>
+        <item>Đồ uống</item>
     </string-array>
 
     <string-array name="category">

@@ -23,7 +23,7 @@
                 android:id="@+id/collapsingToolbar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/bg_collapsing"
+                android:background="@drawable/bg_image"
                 android:fitsSystemWindows="true"
                 app:collapsedTitleTextAppearance="@style/Theme.Collapsingtoolbar"
                 app:contentScrim="@color/green_second"

@@ -2,6 +2,7 @@ package com.example.my_ecomerge_app.view.adapter
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,11 +10,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.my_ecomerge_app.R
 import com.example.my_ecomerge_app.application.MyApplication
 import com.example.my_ecomerge_app.model.Cart
+import com.example.my_ecomerge_app.view.activity.HomeAcitivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -33,6 +36,11 @@ class AdapterCart(private var listCart: MutableList<Cart>, private var context: 
 
     override fun getItemCount(): Int {
         return listCart.size
+    }
+
+    fun calculateTotalPrice() :String {
+        return formatPrice(listCart.sumByDouble { it.price * it.quantity })
+
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
@@ -80,11 +88,9 @@ class AdapterCart(private var listCart: MutableList<Cart>, private var context: 
             CoroutineScope(Dispatchers.IO).launch {
                 MyApplication.appDatabase.cartDao().updateItem(cart)
             }
-            if (quantity == 0) {
                 if (quantity == 0) {
                     AlertDialog.Builder(context)
                         .setTitle("Delete")
-                        .setIcon(R.drawable.baseline_warning_24)
                         .setMessage("Bạn có muốn xoá sản phẩm này không?")
                         .setPositiveButton("Có") { dialog, _ ->
                             // Xoá phần tử khỏi danh sách và cập nhật UI
@@ -93,6 +99,9 @@ class AdapterCart(private var listCart: MutableList<Cart>, private var context: 
                             // Xoá phần tử từ cơ sở dữ liệu
                             CoroutineScope(Dispatchers.IO).launch {
                                 MyApplication.appDatabase.cartDao().deleteItemById(cart.id)
+                            }
+                            if (listCart.size <= 0){
+
                             }
                             dialog.dismiss()
                         }
@@ -109,7 +118,7 @@ class AdapterCart(private var listCart: MutableList<Cart>, private var context: 
                         .create()
                         .show()
                 }
-            }
+
         }
     }
 

@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.ir.backend.js.compile
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -90,4 +92,8 @@ dependencies {
     //retrofit
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    //gms
+    implementation ("com.google.android.gms:play-services-location:21.0.1")
+    //payment : momo
+//    implementation ("com.github.momodevelopment:androidsdkV2.2:3.0")
 }

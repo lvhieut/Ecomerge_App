@@ -58,6 +58,10 @@ class SausageFragment : Fragment() {
                 }
             })
         }
+
+        binding.btnBack.setOnClickListener {
+            requireActivity().supportFragmentManager.popBackStack()
+        }
     }
 
     override fun onCreateView(

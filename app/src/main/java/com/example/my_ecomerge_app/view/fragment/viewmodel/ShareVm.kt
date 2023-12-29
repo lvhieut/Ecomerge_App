@@ -16,9 +16,9 @@ class ShareVm : ViewModel() {
 
 
 
-    // LiveData để theo dõi thay đổi dữ liệu
+
     private val sharedData = MutableLiveData<Order>()
-     val listSt = MutableLiveData<List<Cart>>()
+    val listSt = MutableLiveData<List<Cart>>()
 
     // Phương thức để cập nhật dữ liệu
     fun setSharedData(order: Order) {

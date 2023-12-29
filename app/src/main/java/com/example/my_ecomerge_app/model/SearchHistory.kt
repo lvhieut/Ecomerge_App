@@ -1,5 +1,6 @@
 package com.example.my_ecomerge_app.model
 
+
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -7,7 +8,7 @@ import androidx.room.PrimaryKey
 data class SearchHistory (
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0,
-    val searchKeyword: String){
-    constructor(searchKeyword: String): this(0,searchKeyword = searchKeyword)
-}
+    val searchKeyword: String,
+)
+
 

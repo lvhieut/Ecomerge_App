@@ -57,6 +57,10 @@ class TeaFragment : Fragment() {
                 }
             })
         }
+
+        binding.btnBack.setOnClickListener {
+            requireActivity().supportFragmentManager.popBackStack()
+        }
     }
 
     override fun onCreateView(

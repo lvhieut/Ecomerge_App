@@ -74,6 +74,10 @@ class ChickenFriedFragment : Fragment() {
 
         }
 
+        chickenBinding.btnBack.setOnClickListener {
+            requireActivity().supportFragmentManager.popBackStack()
+        }
+
     }
 
     override fun onCreateView(

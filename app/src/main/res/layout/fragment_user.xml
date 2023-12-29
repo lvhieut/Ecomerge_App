@@ -1,97 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.fragment.UserFragment.UserFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constrainLayout"
+    <data>
+
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:background="#FF5722"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/circleImageView"
-            android:layout_width="50dp"
-            android:background="@color/white"
-            android:layout_height="50dp"
-            android:src="@drawable/user_avt_color"
-            android:layout_marginTop="78dp"
-            android:layout_marginStart="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
-        <LinearLayout
-            android:id="@+id/linearLayoutr"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="5dp"
-            android:orientation="horizontal"
-            app:layout_constraintHorizontal_bias="1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/settings"
-                tools:layout_editor_absoluteX="384dp"
-                tools:layout_editor_absoluteY="5dp" />
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:context=".view.fragment.UserFragment.UserFragment">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/communications"
-                tools:layout_editor_absoluteX="359dp"
-                tools:layout_editor_absoluteY="6dp" />
-        </LinearLayout>
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/nameOfUser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/name_of_user"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:textColor="@color/white"
-            android:layout_marginTop="44dp"
-            android:layout_marginStart="10dp"
-            app:layout_constraintStart_toEndOf="@+id/circleImageView"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayoutr"/>
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/folower"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/follower"
-            android:layout_marginStart="10dp"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@+id/circleImageView"
-            app:layout_constraintTop_toBottomOf="@+id/nameOfUser"
-            tools:ignore="SmallSp" />
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/folowing"
-            android:layout_marginStart="10dp"
-            android:textColor="@color/white"
-            android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@+id/circleImageView"
-            app:layout_constraintTop_toBottomOf="@+id/folower"
-            tools:ignore="SmallSp" />
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-       
+                <LinearLayout
+                    android:id="@+id/linearLayoutProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:background="@drawable/bg_image"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/account"
+                        android:textColor="@color/white"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        app:fontFamily="@font/roboto" />
+                </LinearLayout>
 
-    <!-- TODO: Update blank fragment layout -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="50dp"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toEndOf="@+id/imgMyAvt"
+                    app:layout_constraintTop_toTopOf="@+id/imgMyAvt">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/youngserif_regular"
+                        android:text="@string/my_name_1"
+                        android:textColor="@color/white"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/member"
+                        android:textSize="@dimen/dimen_textview_20sp"
+                        android:textStyle="italic" />
+                </LinearLayout>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgMyAvt"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="130dp"
+                    android:background="@drawable/bg_image_border"
+                    android:src="@drawable/image_song"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayoutProfile">
+
+                    <LinearLayout
+                        android:id="@+id/nestedLinear"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginTop="49dp"
+                        android:orientation="horizontal"
+                        android:weightSum="6">
+
+                        <RelativeLayout
+                            android:id="@+id/rlv1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_weight="2"
+                            android:padding="4dp">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/btnConfirm"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/wallet" />
+
+                            <TextView
+                                android:id="@+id/tvNumber1"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_alignRight="@+id/btnConfirm"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginEnd="7dp"
+                                android:background="@drawable/bg_image_border_user_screen"
+                                android:gravity="center"
+                                android:text="@string/_1"
+                                android:textColor="@color/white" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlv2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_weight="2"
+                            android:padding="4dp">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/btnWait"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/box_64" />
+
+                            <TextView
+                                android:id="@+id/tvNumber2"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_alignRight="@+id/btnWait"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginEnd="7dp"
+                                android:background="@drawable/bg_image_border_user_screen"
+                                android:gravity="center"
+                                android:text="@string/_1"
+                                android:textColor="@color/white" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlv3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_weight="2"
+                            android:padding="4dp">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/btnWaitDelevery"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/fast_delivery" />
+
+                            <TextView
+                                android:id="@+id/tvNumber3"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_alignRight="@+id/btnWaitDelevery"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginEnd="7dp"
+                                android:background="@drawable/bg_image_border_user_screen"
+                                android:gravity="center"
+                                android:text="@string/_1"
+                                android:textColor="@color/white" />
+                        </RelativeLayout>
 
 
+                    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:id="@+id/lin"
+                        android:orientation="horizontal"
+                        android:weightSum="6"
+                        >
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:text="@string/ch_x_c_nh_n"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:id="@+id/tvCXN"/>
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:text="@string/cho_lay_hang"
+                            android:gravity="center"
+                            android:layout_weight="2"
+                            android:id="@+id/tvCLH"/>
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:gravity="center"
+                            android:text="@string/cho_giao_hang"
+                            android:layout_weight="2"
+                            android:id="@+id/tvCGH"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcvProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        tools:listitem="@layout/item_screec_profile" />
+
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+</layout>

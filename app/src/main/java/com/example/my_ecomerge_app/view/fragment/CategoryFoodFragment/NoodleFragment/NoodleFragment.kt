@@ -59,6 +59,8 @@ class NoodleFragment : Fragment() {
 
         }
 
+        bindingNoodleFragment.btnBack.setOnClickListener { requireActivity().supportFragmentManager.popBackStack() }
+
     }
 
     override fun onCreateView(
